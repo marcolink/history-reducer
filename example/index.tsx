@@ -1,12 +1,11 @@
-import 'react-app-polyfill/ie11';
+import * as React from "react";
 import {useCallback, useState} from "react";
-import * as React from 'react';
+import 'react-app-polyfill/ie11';
 import * as ReactDOM from 'react-dom';
-import {useHistoryReducer} from "../.";
-import {Operation} from "../src/reduceHistory";
+import {Operation, useHistoryReducer} from "../src";
 
 const App = () => {
-    const [{present, past, future}, dispatch] = useHistoryReducer<Number>(0);
+    const [{present, past, future}, dispatch] = useHistoryReducer<Number>(0, 5);
     const [localCounter, setLocalCounter] = useState(0);
 
     const increaseLocalState = useCallback(() => {

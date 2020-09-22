@@ -1,6 +1,12 @@
-import { Operation, reduce } from './reduceHistory';
+import { createHistoryReducer, HistoryReduce, Operation } from '../src';
 
 describe('A history reduce function', () => {
+  let reduce: HistoryReduce;
+
+  beforeAll(() => {
+    reduce = createHistoryReducer({});
+  });
+
   it('can push a new state', () => {
     const result = reduce(
       { present: null, past: [], future: [] },
