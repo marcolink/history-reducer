@@ -24,6 +24,7 @@ const App = () => {
             <button onClick={increaseLocalState}>add</button>
             <button onClick={() => dispatch({type: Action.BACK})}>back</button>
             <button onClick={() => dispatch({type: Action.FORWARD})}>forward</button>
+            <button onClick={() => dispatch({type: Action.RESET, state: 0})}>reset</button>
         </div>
     );
 };
