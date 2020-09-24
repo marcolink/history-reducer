@@ -2,13 +2,15 @@ enum Action {
   PUSH = 'push',
   BACK = 'back',
   FORWARD = 'forward',
+  RESET = 'reset',
 }
 
 export type HistoryState<T> = { past: T[]; future: T[]; present: T | null };
 export type HistoryAction<T> =
   | { type: Action.PUSH; state: T }
   | { type: Action.BACK }
-  | { type: Action.FORWARD };
+  | { type: Action.FORWARD }
+  | { type: Action.RESET; state?: T };
 
 export type HistoryReduce = <T>(
   prevState: HistoryState<T>,
@@ -48,6 +50,12 @@ const createHistoryReducer = ({
         past:
           hasPresent && hasFuture ? [...past.slice(-maxSize), present!] : past,
         future: future.slice(0, future.length - 1),
+      };
+    case Action.RESET:
+      return {
+        present: action.state || null,
+        past: [],
+        future: [],
       };
     default:
       return prevState;
