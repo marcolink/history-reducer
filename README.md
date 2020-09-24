@@ -1,9 +1,9 @@
-# react-history
+# history-reducer
 Dead simple react hook to create state history based on react useReducer. 
 
 ## Example
 ```js
-import {useHistoryReducer} from "react-history";
+import {useHistoryReducer} from "history-reducer";
 
 const Example = () => {
     const [{present, past}, dispatch] = useHistoryReducer(0);
