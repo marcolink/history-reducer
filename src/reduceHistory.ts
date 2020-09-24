@@ -1,4 +1,4 @@
-enum Operation {
+enum Action {
   PUSH = 'push',
   BACK = 'back',
   FORWARD = 'forward',
@@ -6,9 +6,9 @@ enum Operation {
 
 export type HistoryState<T> = { past: T[]; future: T[]; present: T | null };
 export type HistoryAction<T> =
-  | { type: Operation.PUSH; state: T }
-  | { type: Operation.BACK }
-  | { type: Operation.FORWARD };
+  | { type: Action.PUSH; state: T }
+  | { type: Action.BACK }
+  | { type: Action.FORWARD };
 
 export type HistoryReduce = <T>(
   prevState: HistoryState<T>,
@@ -27,13 +27,13 @@ const createHistoryReducer = ({
   const hasPresent = present !== null;
 
   switch (action.type) {
-    case Operation.PUSH:
+    case Action.PUSH:
       return {
         present: action.state,
         past: hasPresent ? [...past.slice(-maxSize), present!] : past,
         future: [],
       };
-    case Operation.BACK:
+    case Action.BACK:
       return {
         present: hasPast ? past[past.length - 1] : present,
         past: past.slice(0, past.length - 1),
@@ -42,7 +42,7 @@ const createHistoryReducer = ({
             ? [...future.slice(0, maxSize), present!]
             : future,
       };
-    case Operation.FORWARD:
+    case Action.FORWARD:
       return {
         present: hasFuture ? future[future.length - 1] : present,
         past:
@@ -54,4 +54,4 @@ const createHistoryReducer = ({
   }
 };
 
-export { createHistoryReducer, Operation };
+export { createHistoryReducer, Action };

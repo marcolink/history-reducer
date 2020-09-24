@@ -2,7 +2,7 @@ import * as React from "react";
 import {useCallback, useState} from "react";
 import 'react-app-polyfill/ie11';
 import * as ReactDOM from 'react-dom';
-import {Operation, useHistoryReducer} from "../src";
+import {Action, useHistoryReducer} from "../src";
 
 const App = () => {
     const [{present, past, future}, dispatch] = useHistoryReducer<Number>(0, 5);
@@ -10,7 +10,7 @@ const App = () => {
 
     const increaseLocalState = useCallback(() => {
         setLocalCounter(prevState => {
-            dispatch({type: Operation.PUSH, state: prevState + 1});
+            dispatch({type: Action.PUSH, state: prevState + 1});
             return prevState + 1;
         })
     }, [dispatch]);
@@ -22,8 +22,8 @@ const App = () => {
             <p><strong>PAST:</strong> {past.join(', ')}</p>
             <p><strong>FUTURE:</strong> {future.join(', ')}</p>
             <button onClick={increaseLocalState}>add</button>
-            <button onClick={() => dispatch({type: Operation.BACK})}>back</button>
-            <button onClick={() => dispatch({type: Operation.FORWARD})}>forward</button>
+            <button onClick={() => dispatch({type: Action.BACK})}>back</button>
+            <button onClick={() => dispatch({type: Action.FORWARD})}>forward</button>
         </div>
     );
 };

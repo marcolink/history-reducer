@@ -1,7 +1,7 @@
 export { useHistoryReducer } from './useHistoryReducer';
 export {
   createHistoryReducer,
-  Operation,
+  Action,
   HistoryAction,
   HistoryReduce,
   HistoryState,
