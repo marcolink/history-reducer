@@ -1,5 +1,6 @@
 # history-reducer
 Dead simple react hook to create state history based on react useReducer. 
+![](demo.gif)
 
 ## install
 ```
