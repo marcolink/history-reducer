@@ -71,6 +71,9 @@
       "@semantic-release/github"
     ]
   },
+  "repository": "marcolink/history-reducer",
+  "homepage": "https://github.com/marcolink/history-reducer",
+  "bugs": "https://github.com/marcolink/history-reducer/issues",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@semantic-release/changelog": "^5.0.1",

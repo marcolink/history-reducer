@@ -1,5 +1,5 @@
 # history-reducer
-Dead simple react hook to create state history based on react useReducer. 
+Dead simple react hook to create state history based on react useReducer. Developed to implement **undo**/**redo** shortcuts.
 
 [![Version](https://img.shields.io/npm/v/history-reducer.svg)](https://npmjs.org/package/history-reducer)
 [![Downloads/week](https://img.shields.io/npm/dw/history-reducer.svg)](https://npmjs.org/package/history-reducer)
@@ -29,7 +29,7 @@ yarn add history-reducer
 ```js
 const [{present, past, future}, dispatch] = useHistoryReducer(0, 5);
 ```
-The hook `useHistoryReducer` returns the current state including `present`, `past` and `future` as the first argument, and a `dispatch` function as second. It accepts a default value as a first argument, and the max length for `past` and `future` as a optionao second argument. 
+The hook `useHistoryReducer` returns the current state including `present`, `past` and `future` as the first argument, and a `dispatch` function as second. It accepts a default value as a first argument, and the max length for `past` and `future` as an optional second argument. 
 
 
 ## Example
