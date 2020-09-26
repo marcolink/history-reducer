@@ -6,7 +6,7 @@ import {
 } from './reduceHistory';
 
 function useHistoryReducer<T>(
-  initialValue?: T,
+  initialValue: T | null,
   maxSize = Number.MAX_SAFE_INTEGER
 ) {
   return useReducer<Reducer<HistoryState<T>, HistoryAction<T>>>(
@@ -14,7 +14,7 @@ function useHistoryReducer<T>(
     {
       past: [],
       future: [],
-      present: initialValue || null,
+      present: initialValue,
     }
   );
 }
