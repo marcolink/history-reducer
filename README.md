@@ -5,6 +5,7 @@ Dead simple react hook to create state history based on react useReducer. Develo
 [![Downloads/week](https://img.shields.io/npm/dw/history-reducer.svg)](https://npmjs.org/package/history-reducer)
 [![License](https://img.shields.io/npm/l/history-reducer.svg)](https://github.com/marcolink/history-reducer/blob/master/package.json)
 ![Size](https://github.com/marcolink/history-reducer/workflows/size/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/marcolink/history-reducer/badge.svg?branch=master)](https://coveralls.io/github/marcolink/history-reducer?branch=master)
 
 ![](demo.gif)
 
