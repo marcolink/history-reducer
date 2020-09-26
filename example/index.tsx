@@ -4,7 +4,9 @@ import * as ReactDOM from 'react-dom';
 import {Action, useHistoryReducer} from "../src";
 
 const App = () => {
-    const [{present, past, future}, dispatch] = useHistoryReducer<Number>(0, 5);
+    const [state, dispatch] = useHistoryReducer<Number>(0, 5);
+    console.debug(state);
+    const {present, past, future} = state;
 
     return (
         <div>

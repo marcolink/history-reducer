@@ -3,13 +3,14 @@ import * as React from "react";
 import {Action, useHistoryReducer} from "../src";
 
 describe('A TestComponent with am useHistoryReducer', () => {
-    it.skip('renders initial value as present state', () => {
+    it('renders initial value as present state', () => {
         const {presentState} = renderTestComponent();
         expect(presentState.textContent).toBe('0');
     });
     it('renders pushed state', () => {
         const {presentState, pushButton} = renderTestComponent();
         fireEvent.click(pushButton);
+        expect(presentState.textContent).toBe('1');
         fireEvent.click(pushButton);
         expect(presentState.textContent).toBe('2');
     });
