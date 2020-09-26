@@ -54,7 +54,7 @@ const HistoryReducerExample = () => {
 import {Action, useHistoryReducer} from "history-reducer";
 
 const HistoryReducerExample = () => {
-    const [{present, past}, dispatch] = useHistoryReducer<Number>(0);
+    const [{present, past}, dispatch] = useHistoryReducer<number>(0);
     return (
         <div>
             <p>Current value is {present}, but has been {past} before</p>

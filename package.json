@@ -13,7 +13,9 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
+    "test": "tsdx test",
+    "test:watch": "tsdx test --watch",
+    "test:coverage": "tsdx test --coverage",
     "lint": "tsdx lint",
     "fix": "tsdx lint --fix",
     "prepare": "tsdx build",
@@ -78,6 +80,7 @@
     "@babel/core": "^7.11.6",
     "@semantic-release/changelog": "^5.0.1",
     "@size-limit/preset-small-lib": "^4.6.0",
+    "@testing-library/react": "^11.0.4",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.1.0",
