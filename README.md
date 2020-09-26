@@ -37,12 +37,28 @@ The hook `useHistoryReducer` returns the current state including `present`, `pas
 ```js
 import {useHistoryReducer} from "history-reducer";
 
-const Example = () => {
+const HistoryReducerExample = () => {
     const [{present, past}, dispatch] = useHistoryReducer(0);
     return (
         <div>
             <p>Current value is {present}, but has been {past} before</p>
-            <button onClick={() => dispatch({type:'push', state: present + 1})}>add</button>
+            <button onClick={() => dispatch({type:'push', state: Math.abs(Math.random() * 100)})}>add</button>
+            <button onClick={() => dispatch({type: 'back'})}>back</button>
+        </div>
+    )
+}
+```
+
+#### Basic TS 
+```js
+import {Action, useHistoryReducer} from "history-reducer";
+
+const HistoryReducerExample = () => {
+    const [{present, past}, dispatch] = useHistoryReducer<Number>(0);
+    return (
+        <div>
+            <p>Current value is {present}, but has been {past} before</p>
+            <button onClick={() => dispatch({type:Action.PUSH, state: Math.abs(Math.random() * 100)})}>add</button>
             <button onClick={() => dispatch({type: Action.BACK})}>back</button>
         </div>
     )
