@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '10.x'
       - run: yarn
-      - run: yarn test
+      - run: yarn test:coverage
       - run: yarn run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
