@@ -2,12 +2,12 @@ import * as React from "react";
 import 'react-app-polyfill/ie11';
 import * as ReactDOM from 'react-dom';
 import {Action, useHistoryReducer} from "../src";
-import {useUndoRedo} from "./useUndoRedo";
+import {useUndoRedoHistory} from "../src/useUndoRedoHistory";
 
 const App = () => {
     const [{present, past, future}, dispatch] = useHistoryReducer<number>(0, 5);
 
-    useUndoRedo(dispatch);
+    useUndoRedoHistory(dispatch);
 
     return (
         <div>
