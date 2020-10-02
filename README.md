@@ -25,21 +25,33 @@ yarn add history-reducer
 |`forward` |if available, push the last future state to the current, and make the current the last past state|
 |`reset`   |reset past and future state, and optional set a new current state|
 
-### Hook
-
+### Hooks
+#### `useHistoryReducer`
 ```js
 const [{present, past, future}, dispatch] = useHistoryReducer(0, 5);
 ```
 The hook `useHistoryReducer` returns the current state including `present`, `past` and `future` as the first argument, and a `dispatch` function as second. It accepts a default value as a first argument, and the max length for `past` and `future` as an optional second argument. 
 
+#### `useUndoRedoHistory`
+```js
+const [state, dispatch] = useHistoryReducer();
+useUndoRedoHistory(dispatch);
+```
+The hook `useUndoRedoHistory` listens to `keydown` events on `window` and dispatches `back` and `forward`actions.
+
+| Keys   | Action |
+|----------|-------------|
+| `cmd` + `z`    | `back` |
+| `cmd` + `shift` `z`    | `forward` |
+
 
 ## Example
-#### Basic
 ```js
-import {useHistoryReducer} from "history-reducer";
+import {useHistoryReducer, useUndoRedoHistory} from "history-reducer";
 
 const HistoryReducerExample = () => {
     const [{present, past}, dispatch] = useHistoryReducer(0);
+    useUndoRedoHistory(dispatch);
     return (
         <div>
             <p>Current value is {present}, but has been {past} before</p>
@@ -50,20 +62,5 @@ const HistoryReducerExample = () => {
 }
 ```
 
-#### Basic TS 
-```js
-import {Action, useHistoryReducer} from "history-reducer";
-
-const HistoryReducerExample = () => {
-    const [{present, past}, dispatch] = useHistoryReducer<number>(0);
-    return (
-        <div>
-            <p>Current value is {present}, but has been {past} before</p>
-            <button onClick={() => dispatch({type:Action.PUSH, state: Math.abs(Math.random() * 100)})}>add</button>
-            <button onClick={() => dispatch({type: Action.BACK})}>back</button>
-        </div>
-    )
-}
-```
 
 Also check out the example [here](example).
