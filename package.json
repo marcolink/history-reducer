@@ -77,11 +77,11 @@
   "homepage": "https://github.com/marcolink/history-reducer",
   "bugs": "https://github.com/marcolink/history-reducer/issues",
   "devDependencies": {
-    "@babel/core": "^7.12.10",
+    "@babel/core": "^7.13.14",
     "@semantic-release/changelog": "^5.0.1",
-    "@size-limit/preset-small-lib": "^4.9.2",
+    "@size-limit/preset-small-lib": "^4.10.2",
     "@testing-library/react": "^11.2.3",
-    "@types/react": "^17.0.0",
+    "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.0",
     "babel-loader": "^8.2.2",
     "husky": "^4.3.8",
@@ -89,7 +89,7 @@
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
     "semantic-release": "^17.3.7",
-    "size-limit": "^4.9.2",
+    "size-limit": "^4.10.2",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
     "typescript": "^4.1.3"
