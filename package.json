@@ -77,7 +77,7 @@
   "homepage": "https://github.com/marcolink/history-reducer",
   "bugs": "https://github.com/marcolink/history-reducer/issues",
   "devDependencies": {
-    "@babel/core": "^7.13.14",
+    "@babel/core": "^7.16.0",
     "@semantic-release/changelog": "^5.0.1",
     "@size-limit/preset-small-lib": "^4.10.2",
     "@testing-library/react": "^11.2.7",
