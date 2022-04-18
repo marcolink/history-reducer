@@ -80,7 +80,7 @@
     "@babel/core": "^7.17.5",
     "@semantic-release/changelog": "^5.0.1",
     "@size-limit/preset-small-lib": "^4.10.2",
-    "@testing-library/react": "^11.2.7",
+    "@testing-library/react": "^12.1.5",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.3",
     "babel-loader": "^8.2.3",
